@@ -57,7 +57,11 @@
     </ApplicationDefinition>
     <Compile Include="Acciones.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="Compra.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="Devolucion.xaml.cs">
+      <DependentUpon>Devolucion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Inventario.xaml.cs">
       <DependentUpon>Inventario.xaml</DependentUpon>
     </Compile>
@@ -70,6 +74,10 @@
       <DependentUpon>VentaDisolventeDataSet.xsd</DependentUpon>
     </Compile>
     <Page Include="Alta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Devolucion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -29,14 +29,19 @@ namespace VentaDisolvente
             int acidez = cbAcidez.SelectedIndex + 1;
             float pres = Acciones.getPresentacion(cbPresent);
             int cantidad = Int16.Parse(txtCantidad.Text);
-            int id= Int32.Parse(txtCliente.Text);
-            Cliente cl;
+            int id= Int16.Parse(txtCliente.Text);         
             if (id == 0)
             {
+                Cliente cl;
                 cl = new Cliente();
                 id = cl.getidCliente();
             }
-            Acciones.hacerCompra(id, acidez, pres, cantidad);
+            Compra comp = new Compra(id, acidez, pres, cantidad);
+            MessageBox.Show("se genero la compra: " + comp.getClave());
+            if (comp.generarCompra() > 0)
+                MessageBox.Show("compra realizada");
+            else
+                MessageBox.Show("error en la compra");
         }
 
         private void btCalcular_Click(object sender, RoutedEventArgs e)
@@ -44,7 +49,8 @@ namespace VentaDisolvente
             int acidez = cbAcidez.SelectedIndex + 1;
             float pres = Acciones.getPresentacion(cbPresent);
             int cantidad = Int16.Parse(txtCantidad.Text);
-            txtTotal.Text = (Acciones.calcularPrecio(acidez, pres, cantidad)).ToString();
+            int id = Acciones.getIdDisolvente(acidez, pres);
+            txtTotal.Text= Acciones.calcularPrecio(id, cantidad)+".0 $";
 
         }
 

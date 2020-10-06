@@ -72,10 +72,10 @@ namespace VentaDisolvente
             return res;
         }
 
-        public static int buscarCantidad(int aci, float pres)
+        public static int buscarCantidad(int idDisolv)
         {
             int res = 0;
-            String query = String.Format("select cantidad from Disolvente where acidez = {0} and presentacion= {1}", aci, pres);
+            String query = String.Format("select cantidad from Disolvente where idDisolvente= {0}", idDisolv);
             SqlDataReader rd;
             try
             {
@@ -85,8 +85,7 @@ namespace VentaDisolvente
                 rd = cmd.ExecuteReader();
                 if (rd.Read())
                 {
-                    res = rd.GetInt16(0);
-                    MessageBox.Show("cantidad: " + res.ToString());
+                    res = rd.GetInt16(0);                   
                 }
                 con.Close();
             }
@@ -97,10 +96,10 @@ namespace VentaDisolvente
             return res;
         }
 
-        public static float calcularPrecio(int aci, float pres, int cant)
+        public static int calcularPrecio(int idDisolv, int cant)
         {
-            float res = 0;
-            String query = String.Format("select precio from Disolvente where acidez= {0} and presentacion= {1}", aci, pres);
+            int res = 0;
+            String query = String.Format("select precio from Disolvente where idDisolvente={0}", idDisolv);
             SqlDataReader rd;
             try
             {
@@ -110,8 +109,8 @@ namespace VentaDisolvente
                 rd = cmd.ExecuteReader();
                 if (rd.Read())
                 {
-                    res = (float) rd.GetInt32(0);
-                    MessageBox.Show("precio: " + res.ToString());
+                    res = rd.GetInt16(0)*cant;
+                    
                 }
                 con.Close();
             }
@@ -119,7 +118,7 @@ namespace VentaDisolvente
             {
                 MessageBox.Show("no se puede buscar" + ex);
             }
-            return res * cant;
+            return res;
         }
 
         public static int getIdDisolvente(int aci, float pres)
@@ -135,9 +134,8 @@ namespace VentaDisolvente
                 rd = cmd.ExecuteReader();
                 if (rd.Read())
                 {
-                  
-                    res = rd.GetInt16(0);
-                    MessageBox.Show("id disolvente: "+res.ToString());
+
+                    res = rd.GetInt16(0);            
                 }
                 con.Close();
             }
@@ -148,36 +146,67 @@ namespace VentaDisolvente
             return res;
         }
 
-        public static bool hacerCompra(int id, int aci, float pres, int cant)
+        public static int actualizarCantidad(int idDisolv, int cant)
         {
-            bool res = false;
-            int cuantos = buscarCantidad(aci, pres);
-            String query = String.Format("update Disolvente set cantidad= {0} where acidez = {1} and presentacion = {2}", (cuantos - cant), aci, pres);
+            int cuantos = buscarCantidad(idDisolv);
+            int res = 0;
+            int nuevaCant = cuantos - cant;
+            if (nuevaCant >= 0)
+            {
+                SqlCommand cmd;
+                String query = String.Format("update Disolvente set cantidad= {0} where idDisolvente= {1}", nuevaCant, idDisolv);
+                SqlConnection con;
+                try
+                {
+                    con = Conexion.agregarConexion();
+                    cmd = new SqlCommand(query, con);
+                    res = cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("no se pudo actualizar la cantidad de disolventes " + ex);
+                }
+            }
+            else
+                MessageBox.Show("no hay suficientes");
+            return res;
+
+        }
+
+        public static int devolucion(int claveComp)
+        {
+
+            int res = 0;
             SqlConnection con;
+            SqlCommand cmd1, cmd2;
+            SqlDataReader rd;
+            int cantidadDev, idDisolv;
+            
+            String query1 = String.Format("select cantidad, idDisolvente from Compra where clave={0}", claveComp) ;
+            String query2 = String.Format("delete from Compra where clave={0}", claveComp); 
+            
             try
             {
                 con = Conexion.agregarConexion();
-                SqlCommand cmd1, cmd2;
-                if (cuantos - cant > 0)
-                {
-                    cmd1 = new SqlCommand(query, con);
-                    int idDisolv = getIdDisolvente(aci, pres);
-                    float total = calcularPrecio(aci, pres, cant);
-                    String fecha = DateTime.Today.ToString();
-                    String query2 = String.Format("insert into Compra (RFC, idDisolvente, fecha, cantidad, totalCompra) values ({0}, {1}, '{2}', {3}, {4})", id, idDisolv, fecha, cant, total);
-                    cmd2 = new SqlCommand(query2, con);
-                    res = true;
-                }
-                else
-                    MessageBox.Show("no hay suficientes");
+                cmd1 = new SqlCommand(query1, con);
+                rd = cmd1.ExecuteReader();
+                cantidadDev = rd.GetInt16(0);
+                idDisolv = rd.GetInt16(1);
+                int cantidadNueva = buscarCantidad(idDisolv)+cantidadDev;
+                actualizarCantidad(idDisolv, cantidadNueva);
+                cmd2 = new SqlCommand(query2, con);
+                res = cmd2.ExecuteNonQuery();
                 con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("no se pudo hacer la compra " + ex);
+                MessageBox.Show("No se pudo dar de baja" + ex);
             }
+
             return res;
         }
+
     }
 }
 

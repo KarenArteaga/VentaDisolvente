@@ -37,8 +37,30 @@ namespace VentaDisolvente
         {
             return idCliente;
         }
- 
-        
+
+        public int crearCliente()
+        {
+            int res = 0;
+            SqlCommand cmd;
+            SqlConnection con;
+            
+            String query = String.Format("insert into Cliente (RFC) values ('{0}')", idCliente.ToString());
+            try
+            {
+                con = Conexion.agregarConexion();
+                cmd = new SqlCommand(query, con);
+                res = cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error: " + ex);
+                res = -1;
+            }
+            
+            return res;
+        }
+
 
     }
 }

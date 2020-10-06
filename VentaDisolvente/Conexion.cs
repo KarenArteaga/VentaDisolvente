@@ -33,9 +33,7 @@ namespace VentaDisolvente
         public static String comprobarCon(string us, string pw)
         {
             string res = "", query;
-            //Una manera de hacer el query
-            //query = "select contra from usuarios where nombreUsuario =" + us;
-            //En esta manera, se remplaza lo que esta en los corchetes con lo que va después de la coma
+
             query = String.Format("select contra from usuarios where nombreUsuario= '{0}'", us);
             SqlDataReader rd;
             SqlConnection con;

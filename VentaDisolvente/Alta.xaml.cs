@@ -25,10 +25,10 @@ namespace VentaDisolvente
         }
 
         private void btVenta_Click(object sender, RoutedEventArgs e)
-        {
-            this.Hide();
+        {      
             Venta w = new Venta();
             w.Show();
+            this.Close();
         }
 
         private void btBuscar_Click(object sender, RoutedEventArgs e)
@@ -43,6 +43,9 @@ namespace VentaDisolvente
 
         private void btDevolucion_Click(object sender, RoutedEventArgs e)
         {
+            Devolucion w = new Devolucion();
+            w.Show();
+            this.Close();
 
         }
 
