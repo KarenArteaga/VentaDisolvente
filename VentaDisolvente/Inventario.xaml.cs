@@ -31,8 +31,8 @@ namespace VentaDisolvente
 
         private void Inventario1_Loaded(object sender, RoutedEventArgs e)
         {
-            Conexion.llenarAcidez(cbAcidezInv);
-            Conexion.llenarPresentacion(cbPresenInv);
+            Acciones.llenarAcidez(cbAcidezInv);
+            Acciones.llenarPresentacion(cbPresenInv);
         }
     }
 }

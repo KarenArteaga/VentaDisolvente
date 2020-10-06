@@ -27,7 +27,7 @@ namespace VentaDisolvente
         private void btHacerVenta_Click(object sender, RoutedEventArgs e)
         {
             int acidez = cbAcidez.SelectedIndex + 1;
-            float pres = float.Parse(cbPresent.Text);
+            float pres = Acciones.getPresentacion(cbPresent);
             int cantidad = Int16.Parse(txtCantidad.Text);
             int id= Int32.Parse(txtCliente.Text);
             Cliente cl;
@@ -42,9 +42,9 @@ namespace VentaDisolvente
         private void btCalcular_Click(object sender, RoutedEventArgs e)
         {
             int acidez = cbAcidez.SelectedIndex + 1;
-            float pres = float.Parse(cbPresent.Text);
+            float pres = Acciones.getPresentacion(cbPresent);
             int cantidad = Int16.Parse(txtCantidad.Text);
-            txtTotal.Text =(Acciones.buscarCantidad(acidez, pres) * cantidad).ToString();
+            txtTotal.Text = (Acciones.calcularPrecio(acidez, pres, cantidad)).ToString();
 
         }
 
