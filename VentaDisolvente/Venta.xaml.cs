@@ -36,7 +36,7 @@ namespace VentaDisolvente
                 cl = new Cliente();
                 id = cl.getidCliente();
             }
-            Conexion.hacerCompra(id, acidez, pres, cantidad);
+            Acciones.hacerCompra(id, acidez, pres, cantidad);
         }
 
         private void btCalcular_Click(object sender, RoutedEventArgs e)
@@ -44,14 +44,14 @@ namespace VentaDisolvente
             int acidez = cbAcidez.SelectedIndex + 1;
             float pres = float.Parse(cbPresent.Text);
             int cantidad = Int16.Parse(txtCantidad.Text);
-            txtTotal.Text =(Conexion.buscarCantidad(acidez, pres) * cantidad).ToString();
+            txtTotal.Text =(Acciones.buscarCantidad(acidez, pres) * cantidad).ToString();
 
         }
 
         private void Venta_Loaded(object sender, RoutedEventArgs e)
         {
-            Conexion.llenarAcidez(cbAcidez);
-            Conexion.llenarPresentacion(cbPresent);
+            Acciones.llenarAcidez(cbAcidez);
+            Acciones.llenarPresentacion(cbPresent);
 
         }
     }

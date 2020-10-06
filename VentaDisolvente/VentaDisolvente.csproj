@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Acciones.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Inventario.xaml.cs">
