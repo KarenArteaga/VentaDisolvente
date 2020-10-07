@@ -10,7 +10,7 @@ namespace VentaDisolvente
 {
     class Cliente
     {
-        private static int  idCliente= 10000;
+        private static int  idCliente= Acciones.getUltimoCliente();
         private string nombre;
         private string correo;
         private string direccion;
@@ -29,6 +29,7 @@ namespace VentaDisolvente
         {
             idCliente++;
             nombre = "";
+            correo = "";
             direccion = "";
             numAnimales = 0;
         }
@@ -44,7 +45,7 @@ namespace VentaDisolvente
             SqlCommand cmd;
             SqlConnection con;
             
-            String query = String.Format("insert into Cliente (RFC) values ('{0}')", idCliente.ToString());
+            String query = String.Format("insert into Cliente (RFC, nombre, direccion, correo) values ('{0}', '{1}', '{2}', '{3}' )", idCliente.ToString(), nombre, direccion, correo);
             try
             {
                 con = Conexion.agregarConexion();

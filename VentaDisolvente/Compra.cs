@@ -11,7 +11,7 @@ namespace VentaDisolvente
 {
     class Compra
     {
-        private static int clave=1000;
+        private static int clave=Acciones.getUltimaCompra();
         private int idDisolv;
         private int idCliente;
         private int cantidad;
@@ -43,7 +43,7 @@ namespace VentaDisolvente
                 SqlCommand cmd;
                 SqlConnection con;              
                 DateTime fecha = DateTime.Now;
-                MessageBox.Show("compra realizada: " + totalC+".0 $ pesos" + fecha.ToString());
+                MessageBox.Show("compra realizada: "+clave +" total:  "+ totalC+".0 $ pesos" + fecha.ToString());
                 String query = String.Format("insert into Compra (clave, RFC, idDisolvente, cantidad, totalCompra) values ({0}, '{1}', {2}, {3}, {4})",clave, idCliente.ToString(), idDisolv, cantidad, totalC);
                 try
                 {

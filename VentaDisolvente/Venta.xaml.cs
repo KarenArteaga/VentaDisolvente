@@ -34,13 +34,11 @@ namespace VentaDisolvente
             {
                 Cliente cl;
                 cl = new Cliente();
+                cl.crearCliente();
                 id = cl.getidCliente();
             }
             Compra comp = new Compra(id, acidez, pres, cantidad);
-            MessageBox.Show("se genero la compra: " + comp.getClave());
-            if (comp.generarCompra() > 0)
-                MessageBox.Show("compra realizada");
-            else
+            if (comp.generarCompra() <= 0)        
                 MessageBox.Show("error en la compra");
         }
 
@@ -59,6 +57,13 @@ namespace VentaDisolvente
             Acciones.llenarAcidez(cbAcidez);
             Acciones.llenarPresentacion(cbPresent);
 
+        }
+
+        private void btRegresar_Click(object sender, RoutedEventArgs e)
+        {
+            Alta w = new Alta();
+            w.Show();
+            this.Close();
         }
     }
 }

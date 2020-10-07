@@ -5,24 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VentaDisolvente"
         mc:Ignorable="d"
-        Title="Inventario" Height="450" Width="800" Loaded="Inventario1_Loaded">
+        Title="Inventario" Height="482.1" Width="630.5" Loaded="Inventario1_Loaded">
     <Grid>
-        <Label x:Name="lbStock" Content="Stock total: " HorizontalAlignment="Left" Margin="458,94,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <Label x:Name="lbNumStock" Content="" HorizontalAlignment="Left" Margin="631,94,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Background="#FFE1D7D7" Width="85" RenderTransformOrigin="0.183,1.183"/>
-        <Label x:Name="lbBusPer" Content="Búsqueda Personalizada" HorizontalAlignment="Left" Margin="289,151,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
-        <Button x:Name="btBusqPer" Content="Buscar" HorizontalAlignment="Left" Margin="83,354,0,0" VerticalAlignment="Top" Width="126" Height="33" Click="btBusqPer_Click"/>
-        <Label x:Name="lbAcidezStock" Content="Acidez" HorizontalAlignment="Left" Margin="83,212,0,0" VerticalAlignment="Top" Width="76" Height="33"/>
-        <Label x:Name="lbPresStock" Content="Presentación" HorizontalAlignment="Left" Margin="425,212,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbVentas" Content="Ganancias totales: " HorizontalAlignment="Left" Margin="52,94,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <Label x:Name="lbNumVentas" Content="" HorizontalAlignment="Left" Margin="237,94,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Background="#FFE1D7D7" Width="76" RenderTransformOrigin="0.516,1.23"/>
-        <Label x:Name="lbTitInv" Content="Inventario e Ingresos" HorizontalAlignment="Left" Margin="214,0,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36"/>
-        <Label x:Name="lbStockParcial" Content="En existencia: " HorizontalAlignment="Left" Margin="87,293,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="lbGanParcial" Content="Ganancia parcial: " HorizontalAlignment="Left" Margin="425,287,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="lbGanParc" Content="" HorizontalAlignment="Left" Margin="624,287,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Background="#FFE1D7D7" Width="92"/>
-        <Label x:Name="lbNumStockParc" Content="" HorizontalAlignment="Left" Margin="214,293,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Background="#FFE1D7D7" Width="71"/>
-        <Button x:Name="btActualizar" Content="Actualizar" HorizontalAlignment="Left" Margin="569,354,0,0" VerticalAlignment="Top" Width="147" Height="37"/>
-        <ComboBox x:Name="cbAcidezInv" HorizontalAlignment="Left" Margin="193,212,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cbPresenInv" HorizontalAlignment="Left" Margin="596,212,0,0" VerticalAlignment="Top" Width="120"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="fondo.jpg"/>
+        </Grid.Background>
+        <Rectangle HorizontalAlignment="Left" Height="259" Margin="52,178,0,0" Stroke="#FF38393A" VerticalAlignment="Top" Width="532" Fill="#FF38393A" Opacity="0.6"/>
+        <Label x:Name="lbStock" Content="Stock total: " HorizontalAlignment="Left" Margin="331,67,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" FontFamily="Tahoma"/>
+        <TextBox x:Name="txtStock"  HorizontalAlignment="Left" Margin="417,67,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Background="{x:Null}" Width="167" RenderTransformOrigin="0.183,1.183" Height="27" FontFamily="Tahoma" />
+        <Label x:Name="lbBusPer" Content="Búsqueda Personalizada" HorizontalAlignment="Left" Margin="226,178,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Tahoma" RenderTransformOrigin="0.196,0.407" Foreground="#FFFBF7F7" Background="#FF302B2B"/>
+        <Button x:Name="btBusqPer" Content="Buscar" HorizontalAlignment="Left" Margin="438,387,0,0" VerticalAlignment="Top" Width="146" Click="btBusqPer_Click"  FontFamily="Tahoma" FontSize="14" BorderBrush="#FF3A0505" Background="#FF3A0505" Height="50" Foreground="#FFF9F7F7" />
+        <Label x:Name="lbAcidezStock" Content="Acidez" HorizontalAlignment="Left" Margin="73,218,0,0" VerticalAlignment="Top" Width="76" Height="28" FontFamily="Tahoma" FontSize="14" Foreground="#FFFBFBFB"/>
+        <Label x:Name="lbPresStock" Content="Presentación" HorizontalAlignment="Left" Margin="376,220,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="14" Foreground="#FFFBFBFB"/>
+        <Label x:Name="lbVentas" Content="Ganancias totales: " HorizontalAlignment="Left" Margin="40,67,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" FontFamily="Tahoma"/>
+        <TextBox x:Name="txtGanTot"  HorizontalAlignment="Left" Margin="175,67,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Background="{x:Null}" Width="87" RenderTransformOrigin="0.516,1.23" Height="27" FontFamily="Tahoma"/>
+        <Label x:Name="lbTitInv" Content="Inventario e Ingresos" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Tahoma" Width="546" FontStyle="Italic" Background="#FF6AB222"/>
+        <Label x:Name="lbStockParcial" Content="En existencia: " HorizontalAlignment="Left" Margin="73,315,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Tahoma" Foreground="#FFFBFBFB"/>
+        <Label x:Name="lbGanParcial" Content="Ganancia parcial: " HorizontalAlignment="Left" Margin="360,316,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Tahoma" Foreground="#FFFBFBFB"/>
+        <TextBox x:Name="txtGanPar" HorizontalAlignment="Left" Margin="479,316,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Background="#FFE1D7D7" Width="70" FontFamily="Tahoma" RenderTransformOrigin="0.243,0.407"/>
+        <TextBox x:Name="txtExistencia"  HorizontalAlignment="Left" Margin="175,315,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Background="#FFE1D7D7" Width="71" FontFamily="Tahoma" Height="27"/>
+        <Button x:Name="btActualizar" Content="Actualizar" HorizontalAlignment="Left" Margin="438,128,0,0" VerticalAlignment="Top" Width="146" FontFamily="Tahoma" FontSize="14" BorderBrush="#FF3A0505" Background="#FF3A0505" Height="50" Foreground="#FFF9F7F7" Click="btActualizar_Click" />
+        <Button x:Name="btRegresar" Content="Regresar" HorizontalAlignment="Left" Margin="52,387,0,0" VerticalAlignment="Top" Width="141" FontFamily="Tahoma" FontSize="14" BorderBrush="#FF3A0505" Background="#FF3A0505" Height="50" Foreground="#FFF9F7F7" Click="btRegresar_Click" />
+        <ComboBox x:Name="cbAcidezInv" HorizontalAlignment="Left" Margin="73,246,0,0" VerticalAlignment="Top" Width="173" FontFamily="Tahoma" FontSize="14" Height="28"/>
+        <ComboBox x:Name="cbPresenInv" HorizontalAlignment="Left" Margin="376,247,0,0" VerticalAlignment="Top" Width="173" RenderTransformOrigin="0.354,-0.386" FontFamily="Tahoma" FontSize="14" Height="27"/>
 
     </Grid>
 </Window>

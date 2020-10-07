@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO.Packaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +47,7 @@ namespace VentaDisolvente
 
         }
 
+
         public static float getPresentacion(ComboBox cb)
         {
             float res;
@@ -70,6 +72,58 @@ namespace VentaDisolvente
 
             }
             return res;
+        }
+
+        public static int getUltimoCliente()
+        {
+            int res = 0;
+            String query = String.Format("select max(RFC) from Cliente");
+            SqlDataReader rd;
+            try
+            {
+                SqlConnection con;
+                con = Conexion.agregarConexion();
+                SqlCommand cmd = new SqlCommand(query, con);
+                rd = cmd.ExecuteReader();
+                if (rd.Read())
+                {
+                    string str = rd.GetString(0);
+                    res = Int16.Parse(str);
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("no se encontró el último cliente" + ex);
+            }
+            return res;
+
+
+        }
+
+        public static int getUltimaCompra()
+        {
+            int res = 0;
+            String query = String.Format("select max(clave) from Compra");
+            SqlDataReader rd;
+            try
+            {
+                SqlConnection con;
+                con = Conexion.agregarConexion();
+                SqlCommand cmd = new SqlCommand(query, con);
+                rd = cmd.ExecuteReader();
+                if (rd.Read())
+                {
+                    res = rd.GetInt16(0);
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("no se encontró la última compra" + ex);
+            }
+            return res;
+
         }
 
         public static int buscarCantidad(int idDisolv)
@@ -202,6 +256,109 @@ namespace VentaDisolvente
             catch (Exception ex)
             {
                 MessageBox.Show("No se pudo dar de baja" + ex);
+            }
+
+            return res;
+        }
+
+        public static String[] buscarCliente(String correo)
+        {
+            String[] res = new String[4];
+            String query;            
+            query = String.Format("select * from Cliente where correo like '%{0}%' ", correo);
+            try
+            {
+                SqlConnection con;
+                SqlDataReader rd;
+                con = Conexion.agregarConexion();
+                SqlCommand cmd = new SqlCommand(query, con);         
+                rd = cmd.ExecuteReader();
+                if (rd.Read())
+                {               
+                    for (int i = 0; i < 4; i++)                   
+                        res[i] = rd.GetString(i);
+                    
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("no se encontró: "+ correo + ex);
+            }
+            return res;
+
+        }
+
+        public static int actualizarStock()
+        {
+            int res = -1;
+            String query = String.Format("select sum(cantidad) from Disolvente");
+            try
+            {
+                SqlConnection con;
+                SqlDataReader rd;
+                con = Conexion.agregarConexion();
+                SqlCommand cmd = new SqlCommand(query, con);
+                rd = cmd.ExecuteReader();
+                if (rd.Read())
+                {                   
+                    res = rd.GetInt32(0);
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                res = -1;
+            }
+
+            return res;
+        }
+
+        public static int gananciasTotales()
+        {
+            int res = -1;
+            String query = String.Format("select sum(totalCompra) from Compra");
+            try
+            {
+                SqlConnection con;
+                SqlDataReader rd;
+                con = Conexion.agregarConexion();
+                SqlCommand cmd = new SqlCommand(query, con);
+                rd = cmd.ExecuteReader();
+                if (rd.Read())
+                {
+                    res = rd.GetInt32(0);
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                res = -1;
+            }
+
+            return res;
+        }
+
+        public static int gananciasParciales(int idDis)
+        {
+            int res = -1;
+            String query = String.Format("select sum(totalCompra) from Compra where idDisolvente = {0}", idDis);
+            try
+            {
+                SqlConnection con;
+                SqlDataReader rd;
+                con = Conexion.agregarConexion();
+                SqlCommand cmd = new SqlCommand(query, con);
+                rd = cmd.ExecuteReader();
+                if (rd.Read())
+                {
+                    res = rd.GetInt32(0);
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                res = -1;
             }
 
             return res;

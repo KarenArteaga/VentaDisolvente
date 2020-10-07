@@ -31,11 +31,6 @@ namespace VentaDisolvente
             this.Close();
         }
 
-        private void btBuscar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btPedido_Click(object sender, RoutedEventArgs e)
         {
 
@@ -51,10 +46,22 @@ namespace VentaDisolvente
 
         private void btInventario_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
             Inventario w = new Inventario();
             w.Show();
+            this.Close();
 
+        }
+
+        private void btNuevoCliente_Click(object sender, RoutedEventArgs e)
+        {
+            NuevoC w = new NuevoC();
+            w.Show();
+            this.Close();
+        }
+
+        private void btSalir_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
