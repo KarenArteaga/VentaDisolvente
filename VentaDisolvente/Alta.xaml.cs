@@ -33,7 +33,9 @@ namespace VentaDisolvente
 
         private void btPedido_Click(object sender, RoutedEventArgs e)
         {
-
+            Pedido p = new Pedido();
+            p.Show();
+            this.Close();
         }
 
         private void btDevolucion_Click(object sender, RoutedEventArgs e)

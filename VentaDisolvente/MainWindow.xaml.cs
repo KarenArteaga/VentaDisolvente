@@ -26,11 +26,18 @@ namespace VentaDisolvente
         }
 
         private void Entrar_Click(object sender, RoutedEventArgs e)
-        {
-            String res = Conexion.comprobarCon(txtUsuario.Text, txtContra.Text);
+        {          
+            bool res = Conexion.comprobarCon(txtUsuario.Text, txtContra.Text);
             Alta w = new Alta();
-            w.Show();
-            this.Close();
+            if (res)
+            {
+                w.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("contraseña o usuario incorrectos");
+            }
 
         }
     }

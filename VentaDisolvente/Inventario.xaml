@@ -26,7 +26,7 @@
         <TextBox x:Name="txtExistencia"  HorizontalAlignment="Left" Margin="175,315,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Background="#FFE1D7D7" Width="71" FontFamily="Tahoma" Height="27"/>
         <Button x:Name="btActualizar" Content="Actualizar" HorizontalAlignment="Left" Margin="438,128,0,0" VerticalAlignment="Top" Width="146" FontFamily="Tahoma" FontSize="14" BorderBrush="#FF3A0505" Background="#FF3A0505" Height="50" Foreground="#FFF9F7F7" Click="btActualizar_Click" />
         <Button x:Name="btRegresar" Content="Regresar" HorizontalAlignment="Left" Margin="52,387,0,0" VerticalAlignment="Top" Width="141" FontFamily="Tahoma" FontSize="14" BorderBrush="#FF3A0505" Background="#FF3A0505" Height="50" Foreground="#FFF9F7F7" Click="btRegresar_Click" />
-        <ComboBox x:Name="cbAcidezInv" HorizontalAlignment="Left" Margin="73,246,0,0" VerticalAlignment="Top" Width="173" FontFamily="Tahoma" FontSize="14" Height="28"/>
+        <ComboBox x:Name="cbAcidezInv" HorizontalAlignment="Left" Margin="73,246,0,0" VerticalAlignment="Top" Width="173" FontFamily="Tahoma" FontSize="14" Height="28" />
         <ComboBox x:Name="cbPresenInv" HorizontalAlignment="Left" Margin="376,247,0,0" VerticalAlignment="Top" Width="173" RenderTransformOrigin="0.354,-0.386" FontFamily="Tahoma" FontSize="14" Height="27"/>
 
     </Grid>

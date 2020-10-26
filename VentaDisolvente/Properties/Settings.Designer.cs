@@ -33,5 +33,16 @@ namespace VentaDisolvente.Properties {
                 return ((string)(this["VentaDisolventeConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ACER\\SQLEXPRESS;Initial Catalog=bdDisolvente;Integrated Security=True" +
+            "")]
+        public string bdDisolventeConnectionString {
+            get {
+                return ((string)(this["bdDisolventeConnectionString"]));
+            }
+        }
     }
 }

@@ -7,10 +7,13 @@
         mc:Ignorable="d"
         Title="Devolucion" Height="311.934" Width="484.901">
     <Grid Margin="0,0,2,2">
+        <Grid.Background>
+            <ImageBrush ImageSource="fondo.jpg"/>
+        </Grid.Background>
         <TextBox x:Name="txtClave" HorizontalAlignment="Left" Height="39" Margin="38,100,0,0" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="180" />
-        <Button x:Name="btDevolver" Content="Hacer devolucion" HorizontalAlignment="Left" Margin="297,194,0,0" VerticalAlignment="Top" Width="121" Height="32" RenderTransformOrigin="0.394,-1.375" Click="btDevolver_Click"/>
-        <Button x:Name="btRegresar" Content="Regresar" HorizontalAlignment="Left" Margin="38,194,0,0" VerticalAlignment="Top" Width="131" Height="32" Click="btRegresar_Click"/>
-        <Label Content="Número de compra" HorizontalAlignment="Left" Margin="38,69,0,0" VerticalAlignment="Top" Width="180"/>
+        <Button x:Name="btDevolver" Content="Hacer devolucion" HorizontalAlignment="Left" Margin="297,194,0,0" VerticalAlignment="Top" Width="121"  RenderTransformOrigin="0.394,-1.375" Click="btDevolver_Click" FontFamily="Tahoma" FontSize="14" BorderBrush="#FF3A0505" Background="#FF3A0505" Height="50" Foreground="#FFF9F7F7"/>
+        <Button x:Name="btRegresar" Content="Regresar" HorizontalAlignment="Left" Margin="38,194,0,0" VerticalAlignment="Top" Width="131" Click="btRegresar_Click" FontFamily="Tahoma" FontSize="14" BorderBrush="#FF3A0505" Background="#FF3A0505" Height="50" Foreground="#FFF9F7F7"/>
+        <Label Content="Número de compra: " HorizontalAlignment="Left" Margin="38,69,0,0" Width="180" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" FontFamily="Tahoma" />
 
     </Grid>
 </Window>

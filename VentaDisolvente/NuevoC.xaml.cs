@@ -46,7 +46,8 @@ namespace VentaDisolvente
         private void btBuscarC_Click(object sender, RoutedEventArgs e)
         {
             String correo = txtCorreo.Text;
-            String [] str= Acciones.buscarCliente(correo);
+            Cliente c = new Cliente(correo);
+            String [] str= c.buscarCliente();
             txtCliente.Text = str[0];
             txtNombre.Text = str[1];
             txtDireccion.Text = str[2];

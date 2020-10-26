@@ -21,7 +21,7 @@
         <TextBox x:Name="txtCliente" HorizontalAlignment="Left" Height="23" Margin="315,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Text="0" />
         <Label Content="cantidad" HorizontalAlignment="Left" Margin="67,213,0,0" VerticalAlignment="Top" Width="182" FontFamily="Tahoma" FontSize="14" Foreground="#FFDAD5D5" Height="33" />
         <TextBox x:Name="txtCantidad" HorizontalAlignment="Left" Height="22" Margin="153,213,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="99" FontFamily="Tahoma" FontSize="14"/>
-        <ComboBox x:Name="cbPresent" HorizontalAlignment="Left" Margin="67,162,0,0" VerticalAlignment="Top" Width="185" FontFamily="Tahoma" FontSize="14"/>
+        <ComboBox x:Name="cbPresent" HorizontalAlignment="Left" Margin="67,162,0,0" VerticalAlignment="Top" Width="185" FontFamily="Tahoma" FontSize="14" />
         <ComboBox x:Name="cbAcidez" HorizontalAlignment="Left" Margin="67,82,0,0" VerticalAlignment="Top" Width="185" FontFamily="Tahoma" FontSize="14"/>
         <Button x:Name="btRegresar" Content="Regresar" HorizontalAlignment="Left" Margin="58,373,0,0" VerticalAlignment="Top" Width="75" Click="btRegresar_Click" RenderTransformOrigin="0.907,0.5" FontFamily="Tahoma" FontSize="14"  Foreground="#FFDAD5D5" Background="#FF3A0505" BorderBrush="#FF3A0505"/>
 

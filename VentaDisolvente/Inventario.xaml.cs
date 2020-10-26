@@ -27,10 +27,10 @@ namespace VentaDisolvente
         private void btBusqPer_Click(object sender, RoutedEventArgs e)
         {
             int acidez = cbAcidezInv.SelectedIndex + 1;
-            float pres = Acciones.getPresentacion(cbPresenInv);
-            int id= Acciones.getIdDisolvente(acidez, pres);
-            txtExistencia.Text= Acciones.buscarCantidad(id).ToString();
-            int ganancias = Acciones.gananciasParciales(id);
+            float pres = Conexion.getPresentacion(cbPresenInv.SelectedIndex);
+            Disolvente d = new Disolvente(acidez, pres);
+            txtExistencia.Text= d.buscarCantidad().ToString();
+            int ganancias = d.gananciasParciales();
             if(ganancias >= 0)
                 txtGanPar.Text = ganancias + ".0 $";
             else
@@ -41,8 +41,8 @@ namespace VentaDisolvente
 
         private void Inventario1_Loaded(object sender, RoutedEventArgs e)
         {
-            Acciones.llenarAcidez(cbAcidezInv);
-            Acciones.llenarPresentacion(cbPresenInv);
+            Conexion.llenarDisolvente(cbAcidezInv, "acidez");
+            Conexion.llenarDisolvente(cbPresenInv, "presentacion");
         }
 
         private void btRegresar_Click(object sender, RoutedEventArgs e)
@@ -54,13 +54,15 @@ namespace VentaDisolvente
 
         private void btActualizar_Click(object sender, RoutedEventArgs e)
         {
-            int cuentaProductos = Acciones.actualizarStock();
+            Disolvente d = new Disolvente();
+            Compra c = new Compra();
+            int cuentaProductos = d.actualizarStock();
             if (cuentaProductos >= 0)
                 txtStock.Text = cuentaProductos+ " productos";
             else
                 MessageBox.Show("no se pudo actualizar Stock");
 
-            int gananciasTot = Acciones.gananciasTotales();
+            int gananciasTot = c.gananciasTotales();
 
             if (gananciasTot >= 0)
                 txtGanTot.Text = gananciasTot + ".0 $";

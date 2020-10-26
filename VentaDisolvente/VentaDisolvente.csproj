@@ -55,26 +55,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Acciones.cs" />
+    <Compile Include="bdDisolventeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bdDisolventeDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Cliente.cs" />
     <Compile Include="Compra.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Devolucion.xaml.cs">
       <DependentUpon>Devolucion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Disolvente.cs" />
     <Compile Include="Inventario.xaml.cs">
       <DependentUpon>Inventario.xaml</DependentUpon>
     </Compile>
     <Compile Include="NuevoC.xaml.cs">
       <DependentUpon>NuevoC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pedido.xaml.cs">
+      <DependentUpon>Pedido.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Venta.xaml.cs">
       <DependentUpon>Venta.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="VentaDisolventeDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VentaDisolventeDataSet.xsd</DependentUpon>
     </Compile>
     <Page Include="Alta.xaml">
       <SubType>Designer</SubType>
@@ -107,6 +110,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pedido.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Venta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,20 +137,20 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="bdDisolventeDataSet.xsc">
+      <DependentUpon>bdDisolventeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bdDisolventeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bdDisolventeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bdDisolventeDataSet.xss">
+      <DependentUpon>bdDisolventeDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="VentaDisolventeDataSet.xsc">
-      <DependentUpon>VentaDisolventeDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="VentaDisolventeDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>VentaDisolventeDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="VentaDisolventeDataSet.xss">
-      <DependentUpon>VentaDisolventeDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

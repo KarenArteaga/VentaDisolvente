@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="VentaDisolventeDataSet" targetNamespace="http://tempuri.org/VentaDisolventeDataSet.xsd" xmlns:mstns="http://tempuri.org/VentaDisolventeDataSet.xsd" xmlns="http://tempuri.org/VentaDisolventeDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="bdDisolventeDataSet" targetNamespace="http://tempuri.org/bdDisolventeDataSet.xsd" xmlns:mstns="http://tempuri.org/bdDisolventeDataSet.xsd" xmlns="http://tempuri.org/bdDisolventeDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="VentaDisolventeConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="VentaDisolventeConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.VentaDisolvente.Properties.Settings.GlobalReference.Default.VentaDisolventeConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="bdDisolventeConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="bdDisolventeConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.VentaDisolvente.Properties.Settings.GlobalReference.Default.bdDisolventeConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AlimentacionTableAdapter" GeneratorDataComponentClassName="AlimentacionTableAdapter" Name="Alimentacion" UserDataComponentName="AlimentacionTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="VentaDisolventeConnectionString (Settings)" DbObjectName="VentaDisolvente.dbo.Alimentacion" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="bdDisolventeConnectionString (Settings)" DbObjectName="bdDisolvente.dbo.Alimentacion" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Alimentacion] WHERE (([idAlimentacion] = @Original_idAlimentacion) AND ((@IsNull_tipo = 1 AND [tipo] IS NULL) OR ([tipo] = @Original_tipo)) AND ((@IsNull_cantidad = 1 AND [cantidad] IS NULL) OR ([cantidad] = @Original_cantidad)))</CommandText>
@@ -66,14 +66,14 @@ SELECT idAlimentacion, tipo, cantidad FROM Alimentacion WHERE (idAlimentacion = 
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AnimalTableAdapter" GeneratorDataComponentClassName="AnimalTableAdapter" Name="Animal" UserDataComponentName="AnimalTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="VentaDisolventeConnectionString (Settings)" DbObjectName="VentaDisolvente.dbo.Animal" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="bdDisolventeConnectionString (Settings)" DbObjectName="bdDisolvente.dbo.Animal" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Animal] WHERE (([idAnimal] = @Original_idAnimal) AND ((@IsNull_especie = 1 AND [especie] IS NULL) OR ([especie] = @Original_especie)) AND ((@IsNull_tamaño = 1 AND [tamaño] IS NULL) OR ([tamaño] = @Original_tamaño)) AND ((@IsNull_peso = 1 AND [peso] IS NULL) OR ([peso] = @Original_peso)) AND ((@IsNull_idAlimentacion = 1 AND [idAlimentacion] IS NULL) OR ([idAlimentacion] = @Original_idAlimentacion)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idAnimal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idAnimal" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_especie" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="especie" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_especie" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="especie" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_especie" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="especie" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tamaño" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tamaño" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_tamaño" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="tamaño" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_peso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="peso" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -89,7 +89,7 @@ SELECT idAlimentacion, tipo, cantidad FROM Alimentacion WHERE (idAlimentacion = 
 SELECT idAnimal, especie, tamaño, peso, idAlimentacion FROM Animal WHERE (idAnimal = @idAnimal)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idAnimal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idAnimal" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@especie" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="especie" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@especie" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="especie" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@tamaño" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="tamaño" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@peso" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="peso" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idAlimentacion" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idAlimentacion" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -108,13 +108,13 @@ SELECT idAnimal, especie, tamaño, peso, idAlimentacion FROM Animal WHERE (idAni
 SELECT idAnimal, especie, tamaño, peso, idAlimentacion FROM Animal WHERE (idAnimal = @idAnimal)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idAnimal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idAnimal" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@especie" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="especie" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@especie" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="especie" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@tamaño" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="tamaño" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@peso" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="peso" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idAlimentacion" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idAlimentacion" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idAnimal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idAnimal" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_especie" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="especie" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_especie" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="especie" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_especie" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="especie" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tamaño" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tamaño" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_tamaño" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="tamaño" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_peso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="peso" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -137,12 +137,12 @@ SELECT idAnimal, especie, tamaño, peso, idAlimentacion FROM Animal WHERE (idAni
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ClienteTableAdapter" GeneratorDataComponentClassName="ClienteTableAdapter" Name="Cliente" UserDataComponentName="ClienteTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="VentaDisolventeConnectionString (Settings)" DbObjectName="VentaDisolvente.dbo.Cliente" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="bdDisolventeConnectionString (Settings)" DbObjectName="bdDisolvente.dbo.Cliente" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[Cliente] WHERE (([RFC] = @Original_RFC) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_direccion = 1 AND [direccion] IS NULL) OR ([direccion] = @Original_direccion)) AND ((@IsNull_correo = 1 AND [correo] IS NULL) OR ([correo] = @Original_correo)))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[Cliente] WHERE (([idCliente] = @Original_idCliente) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_direccion = 1 AND [direccion] IS NULL) OR ([direccion] = @Original_direccion)) AND ((@IsNull_correo = 1 AND [correo] IS NULL) OR ([correo] = @Original_correo)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RFC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nombre" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nombre" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_nombre" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="nombre" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_direccion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="direccion" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -154,10 +154,10 @@ SELECT idAnimal, especie, tamaño, peso, idAlimentacion FROM Animal WHERE (idAni
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[Cliente] ([RFC], [nombre], [direccion], [correo]) VALUES (@RFC, @nombre, @direccion, @correo);
-SELECT RFC, nombre, direccion, correo FROM Cliente WHERE (RFC = @RFC)</CommandText>
+                    <CommandText>INSERT INTO [dbo].[Cliente] ([idCliente], [nombre], [direccion], [correo]) VALUES (@idCliente, @nombre, @direccion, @correo);
+SELECT idCliente, nombre, direccion, correo FROM Cliente WHERE (idCliente = @idCliente)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RFC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@nombre" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="nombre" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@direccion" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="direccion" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@correo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="correo" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -166,20 +166,20 @@ SELECT RFC, nombre, direccion, correo FROM Cliente WHERE (RFC = @RFC)</CommandTe
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT RFC, nombre, direccion, correo FROM dbo.Cliente</CommandText>
+                    <CommandText>SELECT idCliente, nombre, direccion, correo FROM dbo.Cliente</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Cliente] SET [RFC] = @RFC, [nombre] = @nombre, [direccion] = @direccion, [correo] = @correo WHERE (([RFC] = @Original_RFC) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_direccion = 1 AND [direccion] IS NULL) OR ([direccion] = @Original_direccion)) AND ((@IsNull_correo = 1 AND [correo] IS NULL) OR ([correo] = @Original_correo)));
-SELECT RFC, nombre, direccion, correo FROM Cliente WHERE (RFC = @RFC)</CommandText>
+                    <CommandText>UPDATE [dbo].[Cliente] SET [idCliente] = @idCliente, [nombre] = @nombre, [direccion] = @direccion, [correo] = @correo WHERE (([idCliente] = @Original_idCliente) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_direccion = 1 AND [direccion] IS NULL) OR ([direccion] = @Original_direccion)) AND ((@IsNull_correo = 1 AND [correo] IS NULL) OR ([correo] = @Original_correo)));
+SELECT idCliente, nombre, direccion, correo FROM Cliente WHERE (idCliente = @idCliente)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RFC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@nombre" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="nombre" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@direccion" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="direccion" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@correo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="correo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RFC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nombre" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nombre" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_nombre" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="nombre" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_direccion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="direccion" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -192,7 +192,7 @@ SELECT RFC, nombre, direccion, correo FROM Cliente WHERE (RFC = @RFC)</CommandTe
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="RFC" DataSetColumn="RFC" />
+              <Mapping SourceColumn="idCliente" DataSetColumn="idCliente" />
               <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
               <Mapping SourceColumn="direccion" DataSetColumn="direccion" />
               <Mapping SourceColumn="correo" DataSetColumn="correo" />
@@ -201,40 +201,40 @@ SELECT RFC, nombre, direccion, correo FROM Cliente WHERE (RFC = @RFC)</CommandTe
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="cliente_animalTableAdapter" GeneratorDataComponentClassName="cliente_animalTableAdapter" Name="cliente_animal" UserDataComponentName="cliente_animalTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="VentaDisolventeConnectionString (Settings)" DbObjectName="VentaDisolvente.dbo.cliente_animal" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="bdDisolventeConnectionString (Settings)" DbObjectName="bdDisolvente.dbo.cliente_animal" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[cliente_animal] WHERE (([RFC] = @Original_RFC) AND ([idAnimal] = @Original_idAnimal))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[cliente_animal] WHERE (([idCliente] = @Original_idCliente) AND ([idAnimal] = @Original_idAnimal))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RFC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idAnimal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idAnimal" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[cliente_animal] ([RFC], [idAnimal]) VALUES (@RFC, @idAnimal);
-SELECT RFC, idAnimal FROM cliente_animal WHERE (RFC = @RFC) AND (idAnimal = @idAnimal)</CommandText>
+                    <CommandText>INSERT INTO [dbo].[cliente_animal] ([idCliente], [idAnimal]) VALUES (@idCliente, @idAnimal);
+SELECT idCliente, idAnimal FROM cliente_animal WHERE (idAnimal = @idAnimal) AND (idCliente = @idCliente)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RFC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idAnimal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idAnimal" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT RFC, idAnimal FROM dbo.cliente_animal</CommandText>
+                    <CommandText>SELECT idCliente, idAnimal FROM dbo.cliente_animal</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[cliente_animal] SET [RFC] = @RFC, [idAnimal] = @idAnimal WHERE (([RFC] = @Original_RFC) AND ([idAnimal] = @Original_idAnimal));
-SELECT RFC, idAnimal FROM cliente_animal WHERE (RFC = @RFC) AND (idAnimal = @idAnimal)</CommandText>
+                    <CommandText>UPDATE [dbo].[cliente_animal] SET [idCliente] = @idCliente, [idAnimal] = @idAnimal WHERE (([idCliente] = @Original_idCliente) AND ([idAnimal] = @Original_idAnimal));
+SELECT idCliente, idAnimal FROM cliente_animal WHERE (idAnimal = @idAnimal) AND (idCliente = @idCliente)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RFC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idAnimal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idAnimal" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RFC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idAnimal" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idAnimal" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
@@ -242,118 +242,146 @@ SELECT RFC, idAnimal FROM cliente_animal WHERE (RFC = @RFC) AND (idAnimal = @idA
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="RFC" DataSetColumn="RFC" />
+              <Mapping SourceColumn="idCliente" DataSetColumn="idCliente" />
               <Mapping SourceColumn="idAnimal" DataSetColumn="idAnimal" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CompraTableAdapter" GeneratorDataComponentClassName="CompraTableAdapter" Name="Compra" UserDataComponentName="CompraTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="VentaDisolventeConnectionString (Settings)" DbObjectName="VentaDisolvente.dbo.Compra" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="bdDisolventeConnectionString (Settings)" DbObjectName="bdDisolvente.dbo.Compra" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[Compra] WHERE (([RFC] = @Original_RFC) AND ([idDisolvente] = @Original_idDisolvente) AND ((@IsNull_fecha = 1 AND [fecha] IS NULL) OR ([fecha] = @Original_fecha)) AND ((@IsNull_cantidad = 1 AND [cantidad] IS NULL) OR ([cantidad] = @Original_cantidad)))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[Compra] WHERE (([clave] = @Original_clave) AND ((@IsNull_idCliente = 1 AND [idCliente] IS NULL) OR ([idCliente] = @Original_idCliente)) AND ((@IsNull_idDisolvente = 1 AND [idDisolvente] IS NULL) OR ([idDisolvente] = @Original_idDisolvente)) AND ((@IsNull_fecha = 1 AND [fecha] IS NULL) OR ([fecha] = @Original_fecha)) AND ((@IsNull_cantidad = 1 AND [cantidad] IS NULL) OR ([cantidad] = @Original_cantidad)) AND ((@IsNull_totalCompra = 1 AND [totalCompra] IS NULL) OR ([totalCompra] = @Original_totalCompra)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RFC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idDisolvente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idDisolvente" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_clave" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="clave" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idDisolvente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idDisolvente" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idDisolvente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idDisolvente" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fecha" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fecha" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_fecha" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fecha" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cantidad" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_cantidad" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_totalCompra" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="totalCompra" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_totalCompra" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="totalCompra" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[Compra] ([RFC], [idDisolvente], [fecha], [cantidad]) VALUES (@RFC, @idDisolvente, @fecha, @cantidad);
-SELECT RFC, idDisolvente, fecha, cantidad FROM Compra WHERE (RFC = @RFC) AND (idDisolvente = @idDisolvente)</CommandText>
+                    <CommandText>INSERT INTO [dbo].[Compra] ([clave], [idCliente], [idDisolvente], [fecha], [cantidad], [totalCompra]) VALUES (@clave, @idCliente, @idDisolvente, @fecha, @cantidad, @totalCompra);
+SELECT clave, idCliente, idDisolvente, fecha, cantidad, totalCompra FROM Compra WHERE (clave = @clave)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RFC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idDisolvente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idDisolvente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@clave" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="clave" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idDisolvente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idDisolvente" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@fecha" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@cantidad" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@totalCompra" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="totalCompra" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT RFC, idDisolvente, fecha, cantidad FROM dbo.Compra</CommandText>
+                    <CommandText>SELECT clave, idCliente, idDisolvente, fecha, cantidad, totalCompra FROM dbo.Compra</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Compra] SET [RFC] = @RFC, [idDisolvente] = @idDisolvente, [fecha] = @fecha, [cantidad] = @cantidad WHERE (([RFC] = @Original_RFC) AND ([idDisolvente] = @Original_idDisolvente) AND ((@IsNull_fecha = 1 AND [fecha] IS NULL) OR ([fecha] = @Original_fecha)) AND ((@IsNull_cantidad = 1 AND [cantidad] IS NULL) OR ([cantidad] = @Original_cantidad)));
-SELECT RFC, idDisolvente, fecha, cantidad FROM Compra WHERE (RFC = @RFC) AND (idDisolvente = @idDisolvente)</CommandText>
+                    <CommandText>UPDATE [dbo].[Compra] SET [clave] = @clave, [idCliente] = @idCliente, [idDisolvente] = @idDisolvente, [fecha] = @fecha, [cantidad] = @cantidad, [totalCompra] = @totalCompra WHERE (([clave] = @Original_clave) AND ((@IsNull_idCliente = 1 AND [idCliente] IS NULL) OR ([idCliente] = @Original_idCliente)) AND ((@IsNull_idDisolvente = 1 AND [idDisolvente] IS NULL) OR ([idDisolvente] = @Original_idDisolvente)) AND ((@IsNull_fecha = 1 AND [fecha] IS NULL) OR ([fecha] = @Original_fecha)) AND ((@IsNull_cantidad = 1 AND [cantidad] IS NULL) OR ([cantidad] = @Original_cantidad)) AND ((@IsNull_totalCompra = 1 AND [totalCompra] IS NULL) OR ([totalCompra] = @Original_totalCompra)));
+SELECT clave, idCliente, idDisolvente, fecha, cantidad, totalCompra FROM Compra WHERE (clave = @clave)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RFC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idDisolvente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idDisolvente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@clave" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="clave" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idDisolvente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idDisolvente" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@fecha" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@cantidad" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RFC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idDisolvente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idDisolvente" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@totalCompra" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="totalCompra" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_clave" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="clave" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idDisolvente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idDisolvente" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idDisolvente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idDisolvente" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fecha" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fecha" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_fecha" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fecha" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cantidad" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_cantidad" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_totalCompra" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="totalCompra" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_totalCompra" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="totalCompra" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="RFC" DataSetColumn="RFC" />
+              <Mapping SourceColumn="clave" DataSetColumn="clave" />
+              <Mapping SourceColumn="idCliente" DataSetColumn="idCliente" />
               <Mapping SourceColumn="idDisolvente" DataSetColumn="idDisolvente" />
               <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
               <Mapping SourceColumn="cantidad" DataSetColumn="cantidad" />
+              <Mapping SourceColumn="totalCompra" DataSetColumn="totalCompra" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DisolventeTableAdapter" GeneratorDataComponentClassName="DisolventeTableAdapter" Name="Disolvente" UserDataComponentName="DisolventeTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="VentaDisolventeConnectionString (Settings)" DbObjectName="VentaDisolvente.dbo.Disolvente" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="bdDisolventeConnectionString (Settings)" DbObjectName="bdDisolvente.dbo.Disolvente" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[Disolvente] WHERE (([idDisolvente] = @Original_idDisolvente) AND ((@IsNull_acidez = 1 AND [acidez] IS NULL) OR ([acidez] = @Original_acidez)) AND ((@IsNull_presentacion = 1 AND [presentacion] IS NULL) OR ([presentacion] = @Original_presentacion)))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[Disolvente] WHERE (([idDisolvente] = @Original_idDisolvente) AND ((@IsNull_acidez = 1 AND [acidez] IS NULL) OR ([acidez] = @Original_acidez)) AND ((@IsNull_presentacion = 1 AND [presentacion] IS NULL) OR ([presentacion] = @Original_presentacion)) AND ((@IsNull_cantidad = 1 AND [cantidad] IS NULL) OR ([cantidad] = @Original_cantidad)) AND ((@IsNull_precio = 1 AND [precio] IS NULL) OR ([precio] = @Original_precio)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idDisolvente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idDisolvente" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_acidez" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="acidez" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_acidez" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="acidez" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_presentacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="presentacion" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_presentacion" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="presentacion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cantidad" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_cantidad" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_precio" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="precio" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_precio" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="precio" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[Disolvente] ([idDisolvente], [acidez], [presentacion]) VALUES (@idDisolvente, @acidez, @presentacion);
-SELECT idDisolvente, acidez, presentacion FROM Disolvente WHERE (idDisolvente = @idDisolvente)</CommandText>
+                    <CommandText>INSERT INTO [dbo].[Disolvente] ([idDisolvente], [acidez], [presentacion], [cantidad], [precio]) VALUES (@idDisolvente, @acidez, @presentacion, @cantidad, @precio);
+SELECT idDisolvente, acidez, presentacion, cantidad, precio FROM Disolvente WHERE (idDisolvente = @idDisolvente)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idDisolvente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idDisolvente" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@acidez" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="acidez" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@presentacion" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="presentacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@cantidad" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@precio" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="precio" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT idDisolvente, acidez, presentacion FROM dbo.Disolvente</CommandText>
+                    <CommandText>SELECT idDisolvente, acidez, presentacion, cantidad, precio FROM dbo.Disolvente</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Disolvente] SET [idDisolvente] = @idDisolvente, [acidez] = @acidez, [presentacion] = @presentacion WHERE (([idDisolvente] = @Original_idDisolvente) AND ((@IsNull_acidez = 1 AND [acidez] IS NULL) OR ([acidez] = @Original_acidez)) AND ((@IsNull_presentacion = 1 AND [presentacion] IS NULL) OR ([presentacion] = @Original_presentacion)));
-SELECT idDisolvente, acidez, presentacion FROM Disolvente WHERE (idDisolvente = @idDisolvente)</CommandText>
+                    <CommandText>UPDATE [dbo].[Disolvente] SET [idDisolvente] = @idDisolvente, [acidez] = @acidez, [presentacion] = @presentacion, [cantidad] = @cantidad, [precio] = @precio WHERE (([idDisolvente] = @Original_idDisolvente) AND ((@IsNull_acidez = 1 AND [acidez] IS NULL) OR ([acidez] = @Original_acidez)) AND ((@IsNull_presentacion = 1 AND [presentacion] IS NULL) OR ([presentacion] = @Original_presentacion)) AND ((@IsNull_cantidad = 1 AND [cantidad] IS NULL) OR ([cantidad] = @Original_cantidad)) AND ((@IsNull_precio = 1 AND [precio] IS NULL) OR ([precio] = @Original_precio)));
+SELECT idDisolvente, acidez, presentacion, cantidad, precio FROM Disolvente WHERE (idDisolvente = @idDisolvente)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idDisolvente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idDisolvente" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@acidez" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="acidez" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@presentacion" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="presentacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@cantidad" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@precio" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="precio" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idDisolvente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idDisolvente" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_acidez" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="acidez" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_acidez" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="acidez" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_presentacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="presentacion" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_presentacion" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="presentacion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cantidad" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_cantidad" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_precio" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="precio" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_precio" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="precio" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -363,60 +391,112 @@ SELECT idDisolvente, acidez, presentacion FROM Disolvente WHERE (idDisolvente = 
               <Mapping SourceColumn="idDisolvente" DataSetColumn="idDisolvente" />
               <Mapping SourceColumn="acidez" DataSetColumn="acidez" />
               <Mapping SourceColumn="presentacion" DataSetColumn="presentacion" />
+              <Mapping SourceColumn="cantidad" DataSetColumn="cantidad" />
+              <Mapping SourceColumn="precio" DataSetColumn="precio" />
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TierraTableAdapter" GeneratorDataComponentClassName="TierraTableAdapter" Name="Tierra" UserDataComponentName="TierraTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PreguntaTableAdapter" GeneratorDataComponentClassName="PreguntaTableAdapter" Name="Pregunta" UserDataComponentName="PreguntaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="VentaDisolventeConnectionString (Settings)" DbObjectName="VentaDisolvente.dbo.Tierra" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="bdDisolventeConnectionString (Settings)" DbObjectName="bdDisolvente.dbo.Pregunta" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[Tierra] WHERE (([idTierra] = @Original_idTierra) AND ((@IsNull_tipo = 1 AND [tipo] IS NULL) OR ([tipo] = @Original_tipo)) AND ((@IsNull_area = 1 AND [area] IS NULL) OR ([area] = @Original_area)) AND ((@IsNull_RFC = 1 AND [RFC] IS NULL) OR ([RFC] = @Original_RFC)))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[Pregunta] WHERE (([idPregunta] = @Original_idPregunta) AND ((@IsNull_texto = 1 AND [texto] IS NULL) OR ([texto] = @Original_texto)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idTierra" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idTierra" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tipo" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_tipo" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="tipo" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_area" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="area" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_area" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="area" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RFC" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RFC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idPregunta" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idPregunta" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_texto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="texto" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_texto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="texto" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[Tierra] ([idTierra], [tipo], [area], [RFC]) VALUES (@idTierra, @tipo, @area, @RFC);
-SELECT idTierra, tipo, area, RFC FROM Tierra WHERE (idTierra = @idTierra)</CommandText>
+                    <CommandText>INSERT INTO [dbo].[Pregunta] ([idPregunta], [texto]) VALUES (@idPregunta, @texto);
+SELECT idPregunta, texto FROM Pregunta WHERE (idPregunta = @idPregunta)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idTierra" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idTierra" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@tipo" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="tipo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@area" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="area" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RFC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idPregunta" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idPregunta" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@texto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="texto" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT idTierra, tipo, area, RFC FROM dbo.Tierra</CommandText>
+                    <CommandText>SELECT idPregunta, texto FROM dbo.Pregunta</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Tierra] SET [idTierra] = @idTierra, [tipo] = @tipo, [area] = @area, [RFC] = @RFC WHERE (([idTierra] = @Original_idTierra) AND ((@IsNull_tipo = 1 AND [tipo] IS NULL) OR ([tipo] = @Original_tipo)) AND ((@IsNull_area = 1 AND [area] IS NULL) OR ([area] = @Original_area)) AND ((@IsNull_RFC = 1 AND [RFC] IS NULL) OR ([RFC] = @Original_RFC)));
-SELECT idTierra, tipo, area, RFC FROM Tierra WHERE (idTierra = @idTierra)</CommandText>
+                    <CommandText>UPDATE [dbo].[Pregunta] SET [idPregunta] = @idPregunta, [texto] = @texto WHERE (([idPregunta] = @Original_idPregunta) AND ((@IsNull_texto = 1 AND [texto] IS NULL) OR ([texto] = @Original_texto)));
+SELECT idPregunta, texto FROM Pregunta WHERE (idPregunta = @idPregunta)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idTierra" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idTierra" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@tipo" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="tipo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@area" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="area" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RFC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idPregunta" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idPregunta" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@texto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="texto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idPregunta" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idPregunta" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_texto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="texto" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_texto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="texto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idPregunta" DataSetColumn="idPregunta" />
+              <Mapping SourceColumn="texto" DataSetColumn="texto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TierraTableAdapter" GeneratorDataComponentClassName="TierraTableAdapter" Name="Tierra" UserDataComponentName="TierraTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="bdDisolventeConnectionString (Settings)" DbObjectName="bdDisolvente.dbo.Tierra" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Tierra] WHERE (([idTierra] = @Original_idTierra) AND ((@IsNull_tipo = 1 AND [tipo] IS NULL) OR ([tipo] = @Original_tipo)) AND ((@IsNull_area = 1 AND [area] IS NULL) OR ([area] = @Original_area)) AND ((@IsNull_idCliente = 1 AND [idCliente] IS NULL) OR ([idCliente] = @Original_idCliente)))</CommandText>
+                    <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idTierra" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idTierra" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tipo" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_tipo" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="tipo" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_area" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="area" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_area" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="area" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RFC" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RFC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RFC" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Tierra] ([idTierra], [tipo], [area], [idCliente]) VALUES (@idTierra, @tipo, @area, @idCliente);
+SELECT idTierra, tipo, area, idCliente FROM Tierra WHERE (idTierra = @idTierra)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idTierra" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idTierra" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@tipo" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="tipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@area" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="area" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT idTierra, tipo, area, idCliente FROM dbo.Tierra</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Tierra] SET [idTierra] = @idTierra, [tipo] = @tipo, [area] = @area, [idCliente] = @idCliente WHERE (([idTierra] = @Original_idTierra) AND ((@IsNull_tipo = 1 AND [tipo] IS NULL) OR ([tipo] = @Original_tipo)) AND ((@IsNull_area = 1 AND [area] IS NULL) OR ([area] = @Original_area)) AND ((@IsNull_idCliente = 1 AND [idCliente] IS NULL) OR ([idCliente] = @Original_idCliente)));
+SELECT idTierra, tipo, area, idCliente FROM Tierra WHERE (idTierra = @idTierra)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idTierra" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idTierra" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@tipo" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="tipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@area" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="area" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idTierra" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idTierra" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tipo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_tipo" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="tipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_area" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="area" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_area" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="area" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -426,7 +506,83 @@ SELECT idTierra, tipo, area, RFC FROM Tierra WHERE (idTierra = @idTierra)</Comma
               <Mapping SourceColumn="idTierra" DataSetColumn="idTierra" />
               <Mapping SourceColumn="tipo" DataSetColumn="tipo" />
               <Mapping SourceColumn="area" DataSetColumn="area" />
-              <Mapping SourceColumn="RFC" DataSetColumn="RFC" />
+              <Mapping SourceColumn="idCliente" DataSetColumn="idCliente" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UsuarioTableAdapter" GeneratorDataComponentClassName="UsuarioTableAdapter" Name="Usuario" UserDataComponentName="UsuarioTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="bdDisolventeConnectionString (Settings)" DbObjectName="bdDisolvente.dbo.Usuario" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Usuario] WHERE (([idUsuario] = @Original_idUsuario) AND ([nombre] = @Original_nombre) AND ((@IsNull_contraseña = 1 AND [contraseña] IS NULL) OR ([contraseña] = @Original_contraseña)) AND ((@IsNull_respuesta = 1 AND [respuesta] IS NULL) OR ([respuesta] = @Original_respuesta)) AND ((@IsNull_idPregunta = 1 AND [idPregunta] IS NULL) OR ([idPregunta] = @Original_idPregunta)) AND ((@IsNull_idCliente = 1 AND [idCliente] IS NULL) OR ([idCliente] = @Original_idCliente)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idUsuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idUsuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_nombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="nombre" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_contraseña" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="contraseña" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_contraseña" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="contraseña" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_respuesta" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="respuesta" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_respuesta" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="respuesta" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idPregunta" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idPregunta" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idPregunta" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idPregunta" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Usuario] ([idUsuario], [nombre], [contraseña], [respuesta], [idPregunta], [idCliente]) VALUES (@idUsuario, @nombre, @contraseña, @respuesta, @idPregunta, @idCliente);
+SELECT idUsuario, nombre, contraseña, respuesta, idPregunta, idCliente FROM Usuario WHERE (idUsuario = @idUsuario)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idUsuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idUsuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@nombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="nombre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@contraseña" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="contraseña" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@respuesta" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="respuesta" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idPregunta" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idPregunta" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT idUsuario, nombre, contraseña, respuesta, idPregunta, idCliente FROM dbo.Usuario</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Usuario] SET [idUsuario] = @idUsuario, [nombre] = @nombre, [contraseña] = @contraseña, [respuesta] = @respuesta, [idPregunta] = @idPregunta, [idCliente] = @idCliente WHERE (([idUsuario] = @Original_idUsuario) AND ([nombre] = @Original_nombre) AND ((@IsNull_contraseña = 1 AND [contraseña] IS NULL) OR ([contraseña] = @Original_contraseña)) AND ((@IsNull_respuesta = 1 AND [respuesta] IS NULL) OR ([respuesta] = @Original_respuesta)) AND ((@IsNull_idPregunta = 1 AND [idPregunta] IS NULL) OR ([idPregunta] = @Original_idPregunta)) AND ((@IsNull_idCliente = 1 AND [idCliente] IS NULL) OR ([idCliente] = @Original_idCliente)));
+SELECT idUsuario, nombre, contraseña, respuesta, idPregunta, idCliente FROM Usuario WHERE (idUsuario = @idUsuario)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idUsuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idUsuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@nombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="nombre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@contraseña" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="contraseña" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@respuesta" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="respuesta" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idPregunta" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idPregunta" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idUsuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idUsuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_nombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="nombre" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_contraseña" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="contraseña" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_contraseña" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="contraseña" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_respuesta" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="respuesta" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_respuesta" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="respuesta" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idPregunta" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idPregunta" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idPregunta" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idPregunta" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_idCliente" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="idCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idUsuario" DataSetColumn="idUsuario" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="contraseña" DataSetColumn="contraseña" />
+              <Mapping SourceColumn="respuesta" DataSetColumn="respuesta" />
+              <Mapping SourceColumn="idPregunta" DataSetColumn="idPregunta" />
+              <Mapping SourceColumn="idCliente" DataSetColumn="idCliente" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -435,7 +591,7 @@ SELECT idTierra, tipo, area, RFC FROM Tierra WHERE (idTierra = @idTierra)</Comma
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="VentaDisolventeDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="VentaDisolventeDataSet" msprop:Generator_UserDSName="VentaDisolventeDataSet">
+  <xs:element name="bdDisolventeDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="bdDisolventeDataSet" msprop:Generator_UserDSName="bdDisolventeDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Alimentacion" msprop:Generator_TableClassName="AlimentacionDataTable" msprop:Generator_TableVarName="tableAlimentacion" msprop:Generator_TablePropName="Alimentacion" msprop:Generator_RowDeletingName="AlimentacionRowDeleting" msprop:Generator_RowChangingName="AlimentacionRowChanging" msprop:Generator_RowEvHandlerName="AlimentacionRowChangeEventHandler" msprop:Generator_RowDeletedName="AlimentacionRowDeleted" msprop:Generator_UserTableName="Alimentacion" msprop:Generator_RowChangedName="AlimentacionRowChanged" msprop:Generator_RowEvArgName="AlimentacionRowChangeEvent" msprop:Generator_RowClassName="AlimentacionRow">
@@ -445,7 +601,7 @@ SELECT idTierra, tipo, area, RFC FROM Tierra WHERE (idTierra = @idTierra)</Comma
               <xs:element name="tipo" msprop:Generator_ColumnVarNameInTable="columntipo" msprop:Generator_ColumnPropNameInRow="tipo" msprop:Generator_ColumnPropNameInTable="tipoColumn" msprop:Generator_UserColumnName="tipo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
+                    <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -460,7 +616,7 @@ SELECT idTierra, tipo, area, RFC FROM Tierra WHERE (idTierra = @idTierra)</Comma
               <xs:element name="especie" msprop:Generator_ColumnVarNameInTable="columnespecie" msprop:Generator_ColumnPropNameInRow="especie" msprop:Generator_ColumnPropNameInTable="especieColumn" msprop:Generator_UserColumnName="especie" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
+                    <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -473,13 +629,7 @@ SELECT idTierra, tipo, area, RFC FROM Tierra WHERE (idTierra = @idTierra)</Comma
         <xs:element name="Cliente" msprop:Generator_TableClassName="ClienteDataTable" msprop:Generator_TableVarName="tableCliente" msprop:Generator_TablePropName="Cliente" msprop:Generator_RowDeletingName="ClienteRowDeleting" msprop:Generator_RowChangingName="ClienteRowChanging" msprop:Generator_RowEvHandlerName="ClienteRowChangeEventHandler" msprop:Generator_RowDeletedName="ClienteRowDeleted" msprop:Generator_UserTableName="Cliente" msprop:Generator_RowChangedName="ClienteRowChanged" msprop:Generator_RowEvArgName="ClienteRowChangeEvent" msprop:Generator_RowClassName="ClienteRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="RFC" msprop:Generator_ColumnVarNameInTable="columnRFC" msprop:Generator_ColumnPropNameInRow="RFC" msprop:Generator_ColumnPropNameInTable="RFCColumn" msprop:Generator_UserColumnName="RFC">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="idCliente" msprop:Generator_ColumnVarNameInTable="columnidCliente" msprop:Generator_ColumnPropNameInRow="idCliente" msprop:Generator_ColumnPropNameInTable="idClienteColumn" msprop:Generator_UserColumnName="idCliente" type="xs:short" />
               <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -507,13 +657,7 @@ SELECT idTierra, tipo, area, RFC FROM Tierra WHERE (idTierra = @idTierra)</Comma
         <xs:element name="cliente_animal" msprop:Generator_TableClassName="cliente_animalDataTable" msprop:Generator_TableVarName="tablecliente_animal" msprop:Generator_TablePropName="cliente_animal" msprop:Generator_RowDeletingName="cliente_animalRowDeleting" msprop:Generator_RowChangingName="cliente_animalRowChanging" msprop:Generator_RowEvHandlerName="cliente_animalRowChangeEventHandler" msprop:Generator_RowDeletedName="cliente_animalRowDeleted" msprop:Generator_UserTableName="cliente_animal" msprop:Generator_RowChangedName="cliente_animalRowChanged" msprop:Generator_RowEvArgName="cliente_animalRowChangeEvent" msprop:Generator_RowClassName="cliente_animalRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="RFC" msprop:Generator_ColumnVarNameInTable="columnRFC" msprop:Generator_ColumnPropNameInRow="RFC" msprop:Generator_ColumnPropNameInTable="RFCColumn" msprop:Generator_UserColumnName="RFC">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="idCliente" msprop:Generator_ColumnVarNameInTable="columnidCliente" msprop:Generator_ColumnPropNameInRow="idCliente" msprop:Generator_ColumnPropNameInTable="idClienteColumn" msprop:Generator_UserColumnName="idCliente" type="xs:short" />
               <xs:element name="idAnimal" msprop:Generator_ColumnVarNameInTable="columnidAnimal" msprop:Generator_ColumnPropNameInRow="idAnimal" msprop:Generator_ColumnPropNameInTable="idAnimalColumn" msprop:Generator_UserColumnName="idAnimal" type="xs:short" />
             </xs:sequence>
           </xs:complexType>
@@ -521,16 +665,12 @@ SELECT idTierra, tipo, area, RFC FROM Tierra WHERE (idTierra = @idTierra)</Comma
         <xs:element name="Compra" msprop:Generator_TableClassName="CompraDataTable" msprop:Generator_TableVarName="tableCompra" msprop:Generator_TablePropName="Compra" msprop:Generator_RowDeletingName="CompraRowDeleting" msprop:Generator_RowChangingName="CompraRowChanging" msprop:Generator_RowEvHandlerName="CompraRowChangeEventHandler" msprop:Generator_RowDeletedName="CompraRowDeleted" msprop:Generator_UserTableName="Compra" msprop:Generator_RowChangedName="CompraRowChanged" msprop:Generator_RowEvArgName="CompraRowChangeEvent" msprop:Generator_RowClassName="CompraRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="RFC" msprop:Generator_ColumnVarNameInTable="columnRFC" msprop:Generator_ColumnPropNameInRow="RFC" msprop:Generator_ColumnPropNameInTable="RFCColumn" msprop:Generator_UserColumnName="RFC">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="idDisolvente" msprop:Generator_ColumnVarNameInTable="columnidDisolvente" msprop:Generator_ColumnPropNameInRow="idDisolvente" msprop:Generator_ColumnPropNameInTable="idDisolventeColumn" msprop:Generator_UserColumnName="idDisolvente" type="xs:short" />
+              <xs:element name="clave" msprop:Generator_ColumnVarNameInTable="columnclave" msprop:Generator_ColumnPropNameInRow="clave" msprop:Generator_ColumnPropNameInTable="claveColumn" msprop:Generator_UserColumnName="clave" type="xs:short" />
+              <xs:element name="idCliente" msprop:Generator_ColumnVarNameInTable="columnidCliente" msprop:Generator_ColumnPropNameInRow="idCliente" msprop:Generator_ColumnPropNameInTable="idClienteColumn" msprop:Generator_UserColumnName="idCliente" type="xs:short" minOccurs="0" />
+              <xs:element name="idDisolvente" msprop:Generator_ColumnVarNameInTable="columnidDisolvente" msprop:Generator_ColumnPropNameInRow="idDisolvente" msprop:Generator_ColumnPropNameInTable="idDisolventeColumn" msprop:Generator_UserColumnName="idDisolvente" type="xs:short" minOccurs="0" />
               <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
               <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:short" minOccurs="0" />
+              <xs:element name="totalCompra" msprop:Generator_ColumnVarNameInTable="columntotalCompra" msprop:Generator_ColumnPropNameInRow="totalCompra" msprop:Generator_ColumnPropNameInTable="totalCompraColumn" msprop:Generator_UserColumnName="totalCompra" type="xs:short" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -540,6 +680,22 @@ SELECT idTierra, tipo, area, RFC FROM Tierra WHERE (idTierra = @idTierra)</Comma
               <xs:element name="idDisolvente" msprop:Generator_ColumnVarNameInTable="columnidDisolvente" msprop:Generator_ColumnPropNameInRow="idDisolvente" msprop:Generator_ColumnPropNameInTable="idDisolventeColumn" msprop:Generator_UserColumnName="idDisolvente" type="xs:short" />
               <xs:element name="acidez" msprop:Generator_ColumnVarNameInTable="columnacidez" msprop:Generator_ColumnPropNameInRow="acidez" msprop:Generator_ColumnPropNameInTable="acidezColumn" msprop:Generator_UserColumnName="acidez" type="xs:short" minOccurs="0" />
               <xs:element name="presentacion" msprop:Generator_ColumnVarNameInTable="columnpresentacion" msprop:Generator_ColumnPropNameInRow="presentacion" msprop:Generator_ColumnPropNameInTable="presentacionColumn" msprop:Generator_UserColumnName="presentacion" type="xs:double" minOccurs="0" />
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:short" minOccurs="0" />
+              <xs:element name="precio" msprop:Generator_ColumnVarNameInTable="columnprecio" msprop:Generator_ColumnPropNameInRow="precio" msprop:Generator_ColumnPropNameInTable="precioColumn" msprop:Generator_UserColumnName="precio" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Pregunta" msprop:Generator_TableClassName="PreguntaDataTable" msprop:Generator_TableVarName="tablePregunta" msprop:Generator_TablePropName="Pregunta" msprop:Generator_RowDeletingName="PreguntaRowDeleting" msprop:Generator_RowChangingName="PreguntaRowChanging" msprop:Generator_RowEvHandlerName="PreguntaRowChangeEventHandler" msprop:Generator_RowDeletedName="PreguntaRowDeleted" msprop:Generator_UserTableName="Pregunta" msprop:Generator_RowChangedName="PreguntaRowChanged" msprop:Generator_RowEvArgName="PreguntaRowChangeEvent" msprop:Generator_RowClassName="PreguntaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idPregunta" msprop:Generator_ColumnVarNameInTable="columnidPregunta" msprop:Generator_ColumnPropNameInRow="idPregunta" msprop:Generator_ColumnPropNameInTable="idPreguntaColumn" msprop:Generator_UserColumnName="idPregunta" type="xs:int" />
+              <xs:element name="texto" msprop:Generator_ColumnVarNameInTable="columntexto" msprop:Generator_ColumnPropNameInRow="texto" msprop:Generator_ColumnPropNameInTable="textoColumn" msprop:Generator_UserColumnName="texto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -555,13 +711,37 @@ SELECT idTierra, tipo, area, RFC FROM Tierra WHERE (idTierra = @idTierra)</Comma
                 </xs:simpleType>
               </xs:element>
               <xs:element name="area" msprop:Generator_ColumnVarNameInTable="columnarea" msprop:Generator_ColumnPropNameInRow="area" msprop:Generator_ColumnPropNameInTable="areaColumn" msprop:Generator_UserColumnName="area" type="xs:short" minOccurs="0" />
-              <xs:element name="RFC" msprop:Generator_ColumnVarNameInTable="columnRFC" msprop:Generator_ColumnPropNameInRow="RFC" msprop:Generator_ColumnPropNameInTable="RFCColumn" msprop:Generator_UserColumnName="RFC" minOccurs="0">
+              <xs:element name="idCliente" msprop:Generator_ColumnVarNameInTable="columnidCliente" msprop:Generator_ColumnPropNameInRow="idCliente" msprop:Generator_ColumnPropNameInTable="idClienteColumn" msprop:Generator_UserColumnName="idCliente" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Usuario" msprop:Generator_TableClassName="UsuarioDataTable" msprop:Generator_TableVarName="tableUsuario" msprop:Generator_TablePropName="Usuario" msprop:Generator_RowDeletingName="UsuarioRowDeleting" msprop:Generator_RowChangingName="UsuarioRowChanging" msprop:Generator_RowEvHandlerName="UsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuarioRowDeleted" msprop:Generator_UserTableName="Usuario" msprop:Generator_RowChangedName="UsuarioRowChanged" msprop:Generator_RowEvArgName="UsuarioRowChangeEvent" msprop:Generator_RowClassName="UsuarioRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idUsuario" msprop:Generator_ColumnVarNameInTable="columnidUsuario" msprop:Generator_ColumnPropNameInRow="idUsuario" msprop:Generator_ColumnPropNameInTable="idUsuarioColumn" msprop:Generator_UserColumnName="idUsuario" type="xs:int" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="contraseña" msprop:Generator_ColumnVarNameInTable="columncontraseña" msprop:Generator_ColumnPropNameInRow="contraseña" msprop:Generator_ColumnPropNameInTable="contraseñaColumn" msprop:Generator_UserColumnName="contraseña" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="respuesta" msprop:Generator_ColumnVarNameInTable="columnrespuesta" msprop:Generator_ColumnPropNameInRow="respuesta" msprop:Generator_ColumnPropNameInTable="respuestaColumn" msprop:Generator_UserColumnName="respuesta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idPregunta" msprop:Generator_ColumnVarNameInTable="columnidPregunta" msprop:Generator_ColumnPropNameInRow="idPregunta" msprop:Generator_ColumnPropNameInTable="idPreguntaColumn" msprop:Generator_UserColumnName="idPregunta" type="xs:int" minOccurs="0" />
+              <xs:element name="idCliente" msprop:Generator_ColumnVarNameInTable="columnidCliente" msprop:Generator_ColumnPropNameInRow="idCliente" msprop:Generator_ColumnPropNameInTable="idClienteColumn" msprop:Generator_UserColumnName="idCliente" type="xs:short" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -577,35 +757,44 @@ SELECT idTierra, tipo, area, RFC FROM Tierra WHERE (idTierra = @idTierra)</Comma
     </xs:unique>
     <xs:unique name="Cliente_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Cliente" />
-      <xs:field xpath="mstns:RFC" />
+      <xs:field xpath="mstns:idCliente" />
     </xs:unique>
     <xs:unique name="cliente_animal_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:cliente_animal" />
-      <xs:field xpath="mstns:RFC" />
+      <xs:field xpath="mstns:idCliente" />
       <xs:field xpath="mstns:idAnimal" />
     </xs:unique>
     <xs:unique name="Compra_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Compra" />
-      <xs:field xpath="mstns:RFC" />
-      <xs:field xpath="mstns:idDisolvente" />
+      <xs:field xpath="mstns:clave" />
     </xs:unique>
     <xs:unique name="Disolvente_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Disolvente" />
       <xs:field xpath="mstns:idDisolvente" />
     </xs:unique>
+    <xs:unique name="Pregunta_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Pregunta" />
+      <xs:field xpath="mstns:idPregunta" />
+    </xs:unique>
     <xs:unique name="Tierra_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Tierra" />
       <xs:field xpath="mstns:idTierra" />
     </xs:unique>
+    <xs:unique name="Usuario_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Usuario" />
+      <xs:field xpath="mstns:idUsuario" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Animal__idAlimen__31EC6D26" msdata:parent="Alimentacion" msdata:child="Animal" msdata:parentkey="idAlimentacion" msdata:childkey="idAlimentacion" msprop:Generator_UserChildTable="Animal" msprop:Generator_ChildPropName="GetAnimalRows" msprop:Generator_UserRelationName="FK__Animal__idAlimen__31EC6D26" msprop:Generator_ParentPropName="AlimentacionRow" msprop:Generator_RelationVarName="relationFK__Animal__idAlimen__31EC6D26" msprop:Generator_UserParentTable="Alimentacion" />
-      <msdata:Relationship name="FK__cliente_a__idAni__35BCFE0A" msdata:parent="Animal" msdata:child="cliente_animal" msdata:parentkey="idAnimal" msdata:childkey="idAnimal" msprop:Generator_UserChildTable="cliente_animal" msprop:Generator_ChildPropName="Getcliente_animalRows" msprop:Generator_UserRelationName="FK__cliente_a__idAni__35BCFE0A" msprop:Generator_ParentPropName="AnimalRow" msprop:Generator_RelationVarName="relationFK__cliente_a__idAni__35BCFE0A" msprop:Generator_UserParentTable="Animal" />
-      <msdata:Relationship name="FK__cliente_ani__RFC__34C8D9D1" msdata:parent="Cliente" msdata:child="cliente_animal" msdata:parentkey="RFC" msdata:childkey="RFC" msprop:Generator_UserChildTable="cliente_animal" msprop:Generator_ChildPropName="Getcliente_animalRows" msprop:Generator_UserRelationName="FK__cliente_ani__RFC__34C8D9D1" msprop:Generator_ParentPropName="ClienteRow" msprop:Generator_RelationVarName="relationFK__cliente_ani__RFC__34C8D9D1" msprop:Generator_UserParentTable="Cliente" />
-      <msdata:Relationship name="FK__Compra__idDisolv__2B3F6F97" msdata:parent="Disolvente" msdata:child="Compra" msdata:parentkey="idDisolvente" msdata:childkey="idDisolvente" msprop:Generator_UserChildTable="Compra" msprop:Generator_ChildPropName="GetCompraRows" msprop:Generator_UserRelationName="FK__Compra__idDisolv__2B3F6F97" msprop:Generator_RelationVarName="relationFK__Compra__idDisolv__2B3F6F97" msprop:Generator_UserParentTable="Disolvente" msprop:Generator_ParentPropName="DisolventeRow" />
-      <msdata:Relationship name="FK__Compra__RFC__2A4B4B5E" msdata:parent="Cliente" msdata:child="Compra" msdata:parentkey="RFC" msdata:childkey="RFC" msprop:Generator_UserChildTable="Compra" msprop:Generator_ChildPropName="GetCompraRows" msprop:Generator_UserRelationName="FK__Compra__RFC__2A4B4B5E" msprop:Generator_ParentPropName="ClienteRow" msprop:Generator_RelationVarName="relationFK__Compra__RFC__2A4B4B5E" msprop:Generator_UserParentTable="Cliente" />
-      <msdata:Relationship name="FK__Tierra__RFC__38996AB5" msdata:parent="Cliente" msdata:child="Tierra" msdata:parentkey="RFC" msdata:childkey="RFC" msprop:Generator_UserChildTable="Tierra" msprop:Generator_ChildPropName="GetTierraRows" msprop:Generator_UserRelationName="FK__Tierra__RFC__38996AB5" msprop:Generator_ParentPropName="ClienteRow" msprop:Generator_RelationVarName="relationFK__Tierra__RFC__38996AB5" msprop:Generator_UserParentTable="Cliente" />
+      <msdata:Relationship name="FK__Animal__idAlimen__440B1D61" msdata:parent="Alimentacion" msdata:child="Animal" msdata:parentkey="idAlimentacion" msdata:childkey="idAlimentacion" msprop:Generator_UserChildTable="Animal" msprop:Generator_ChildPropName="GetAnimalRows" msprop:Generator_UserRelationName="FK__Animal__idAlimen__440B1D61" msprop:Generator_ParentPropName="AlimentacionRow" msprop:Generator_RelationVarName="relationFK__Animal__idAlimen__440B1D61" msprop:Generator_UserParentTable="Alimentacion" />
+      <msdata:Relationship name="FK__cliente_a__idAni__47DBAE45" msdata:parent="Animal" msdata:child="cliente_animal" msdata:parentkey="idAnimal" msdata:childkey="idAnimal" msprop:Generator_UserChildTable="cliente_animal" msprop:Generator_ChildPropName="Getcliente_animalRows" msprop:Generator_UserRelationName="FK__cliente_a__idAni__47DBAE45" msprop:Generator_ParentPropName="AnimalRow" msprop:Generator_RelationVarName="relationFK__cliente_a__idAni__47DBAE45" msprop:Generator_UserParentTable="Animal" />
+      <msdata:Relationship name="FK__cliente_a__idCli__46E78A0C" msdata:parent="Cliente" msdata:child="cliente_animal" msdata:parentkey="idCliente" msdata:childkey="idCliente" msprop:Generator_UserChildTable="cliente_animal" msprop:Generator_ChildPropName="Getcliente_animalRows" msprop:Generator_UserRelationName="FK__cliente_a__idCli__46E78A0C" msprop:Generator_ParentPropName="ClienteRow" msprop:Generator_RelationVarName="relationFK__cliente_a__idCli__46E78A0C" msprop:Generator_UserParentTable="Cliente" />
+      <msdata:Relationship name="FK__Compra__idClient__3C69FB99" msdata:parent="Cliente" msdata:child="Compra" msdata:parentkey="idCliente" msdata:childkey="idCliente" msprop:Generator_UserChildTable="Compra" msprop:Generator_ChildPropName="GetCompraRows" msprop:Generator_UserRelationName="FK__Compra__idClient__3C69FB99" msprop:Generator_ParentPropName="ClienteRow" msprop:Generator_RelationVarName="relationFK__Compra__idClient__3C69FB99" msprop:Generator_UserParentTable="Cliente" />
+      <msdata:Relationship name="FK__Compra__idDisolv__3D5E1FD2" msdata:parent="Disolvente" msdata:child="Compra" msdata:parentkey="idDisolvente" msdata:childkey="idDisolvente" msprop:Generator_UserChildTable="Compra" msprop:Generator_ChildPropName="GetCompraRows" msprop:Generator_UserRelationName="FK__Compra__idDisolv__3D5E1FD2" msprop:Generator_RelationVarName="relationFK__Compra__idDisolv__3D5E1FD2" msprop:Generator_UserParentTable="Disolvente" msprop:Generator_ParentPropName="DisolventeRow" />
+      <msdata:Relationship name="FK__Tierra__idClient__4AB81AF0" msdata:parent="Cliente" msdata:child="Tierra" msdata:parentkey="idCliente" msdata:childkey="idCliente" msprop:Generator_UserChildTable="Tierra" msprop:Generator_ChildPropName="GetTierraRows" msprop:Generator_UserRelationName="FK__Tierra__idClient__4AB81AF0" msprop:Generator_ParentPropName="ClienteRow" msprop:Generator_RelationVarName="relationFK__Tierra__idClient__4AB81AF0" msprop:Generator_UserParentTable="Cliente" />
+      <msdata:Relationship name="FK__Usuario__idClien__5070F446" msdata:parent="Cliente" msdata:child="Usuario" msdata:parentkey="idCliente" msdata:childkey="idCliente" msprop:Generator_UserChildTable="Usuario" msprop:Generator_ChildPropName="GetUsuarioRows" msprop:Generator_UserRelationName="FK__Usuario__idClien__5070F446" msprop:Generator_ParentPropName="ClienteRow" msprop:Generator_RelationVarName="relationFK__Usuario__idClien__5070F446" msprop:Generator_UserParentTable="Cliente" />
+      <msdata:Relationship name="FK__Usuario__idPregu__4F7CD00D" msdata:parent="Pregunta" msdata:child="Usuario" msdata:parentkey="idPregunta" msdata:childkey="idPregunta" msprop:Generator_UserChildTable="Usuario" msprop:Generator_ChildPropName="GetUsuarioRows" msprop:Generator_UserRelationName="FK__Usuario__idPregu__4F7CD00D" msprop:Generator_ParentPropName="PreguntaRow" msprop:Generator_RelationVarName="relationFK__Usuario__idPregu__4F7CD00D" msprop:Generator_UserParentTable="Pregunta" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

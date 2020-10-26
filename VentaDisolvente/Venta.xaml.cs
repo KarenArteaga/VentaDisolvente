@@ -27,7 +27,7 @@ namespace VentaDisolvente
         private void btHacerVenta_Click(object sender, RoutedEventArgs e)
         {
             int acidez = cbAcidez.SelectedIndex + 1;
-            float pres = Acciones.getPresentacion(cbPresent);
+            float pres = Conexion.getPresentacion(cbPresent.SelectedIndex);
             int cantidad = Int16.Parse(txtCantidad.Text);
             int id= Int16.Parse(txtCliente.Text);         
             if (id == 0)
@@ -38,24 +38,31 @@ namespace VentaDisolvente
                 id = cl.getidCliente();
             }
             Compra comp = new Compra(id, acidez, pres, cantidad);
-            if (comp.generarCompra() <= 0)        
+            int totalC = comp.generarCompra();
+            DateTime fecha = DateTime.Now;
+            if (comp.generarCompra() > 0)
+                MessageBox.Show("compra realizada:  total:  " + totalC + ".0 $ pesos" + fecha.ToString());
+            else
                 MessageBox.Show("error en la compra");
         }
 
         private void btCalcular_Click(object sender, RoutedEventArgs e)
         {
-            int acidez = cbAcidez.SelectedIndex + 1;
-            float pres = Acciones.getPresentacion(cbPresent);
+            float present = Conexion.getPresentacion(cbAcidez.SelectedIndex);
+            MessageBox.Show("" + present);
+            Disolvente d = new Disolvente(cbAcidez.SelectedIndex + 1, present);           
             int cantidad = Int16.Parse(txtCantidad.Text);
-            int id = Acciones.getIdDisolvente(acidez, pres);
-            txtTotal.Text= Acciones.calcularPrecio(id, cantidad)+".0 $";
-
+            int total = d.calcularPrecio(cantidad);
+            if (total > 0)
+                txtTotal.Text = total + ".0 $";
+            else
+                MessageBox.Show("error ");
         }
 
         private void Venta_Loaded(object sender, RoutedEventArgs e)
         {
-            Acciones.llenarAcidez(cbAcidez);
-            Acciones.llenarPresentacion(cbPresent);
+            Conexion.llenarDisolvente(cbAcidez, "acidez");
+            Conexion.llenarDisolvente(cbPresent, "presentacion");
 
         }
 
@@ -65,5 +72,6 @@ namespace VentaDisolvente
             w.Show();
             this.Close();
         }
+
     }
 }

@@ -10,7 +10,7 @@ namespace VentaDisolvente
 {
     class Cliente
     {
-        private static int  idCliente= Acciones.getUltimoCliente();
+        private static int  idCliente= Conexion.getUltimoCliente();
         private string nombre;
         private string correo;
         private string direccion;
@@ -34,18 +34,27 @@ namespace VentaDisolvente
             numAnimales = 0;
         }
 
+        public Cliente(String cor)
+        {
+            correo = cor;
+        }
+
         public int getidCliente()
         {
             return idCliente;
         }
 
+        /**
+        * el método crearClinete() inserta un cliente nuevo en la base de datos 
+        * regresa -1 en caso de error o la clave del nuevo cliente en caso de éxito
+        */
         public int crearCliente()
         {
             int res = 0;
             SqlCommand cmd;
             SqlConnection con;
             
-            String query = String.Format("insert into Cliente (RFC, nombre, direccion, correo) values ('{0}', '{1}', '{2}', '{3}' )", idCliente.ToString(), nombre, direccion, correo);
+            String query = String.Format("insert into Cliente (idCliente, nombre, direccion, correo) values ({0}, '{1}', '{2}', '{3}' )", idCliente, nombre, direccion, correo);
             try
             {
                 con = Conexion.agregarConexion();
@@ -55,11 +64,45 @@ namespace VentaDisolvente
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error: " + ex);
                 res = -1;
             }
             
             return res;
+        }
+
+
+        /**
+        * el método buscarCliente() busca los datos de un cliente específico por medio de su correo
+        * no tiene parámetros 
+        * no lanza excepciones y regresa una lista de cadenas que representan los datos del cliente 
+        */
+        public String[] buscarCliente()
+        {
+            String[] res = new String[4];
+            String query;
+            query = String.Format("select * from Cliente where correo like '%{0}%' ", correo);
+            try
+            {
+                SqlConnection con;
+                SqlDataReader rd;
+                con = Conexion.agregarConexion();
+                SqlCommand cmd = new SqlCommand(query, con);
+                rd = cmd.ExecuteReader();
+                if (rd.Read())
+                {
+                    res[0] = rd.GetInt16(0).ToString(); //la clave es int
+                    for (int i = 0; i < 4; i++)
+                        res[i] = rd.GetString(i);
+
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("no se encontró: " + correo + ex);
+            }
+            return res;
+
         }
 
 
