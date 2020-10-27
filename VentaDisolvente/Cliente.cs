@@ -10,7 +10,7 @@ namespace VentaDisolvente
 {
     class Cliente
     {
-        private static int  idCliente= Conexion.getUltimoCliente();
+        private int idCliente;
         private string nombre;
         private string correo;
         private string direccion;
@@ -18,7 +18,7 @@ namespace VentaDisolvente
 
         public Cliente( string nombre, string correo, string direccion, int numAnimales)
         {
-            idCliente++;
+            idCliente = Conexion.getUltimoCliente() +1;
             this.nombre = nombre;
             this.correo = correo;
             this.direccion = direccion;

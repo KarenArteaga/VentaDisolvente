@@ -42,7 +42,7 @@ namespace VentaDisolvente
             bool res;
             string query;
 
-            query = String.Format("select contra from usuarios where nombreUsuario= '{0}'", us);
+            query = String.Format("select contraseña from Usuario where nombre= '{0}'", us);
             SqlDataReader rd;
             SqlConnection con;
 
@@ -94,7 +94,7 @@ namespace VentaDisolvente
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo llenar el combo" + ex);
+                
             }
         }
 
@@ -123,7 +123,7 @@ namespace VentaDisolvente
             }
             catch (Exception ex)
             {
-                MessageBox.Show("no se encontró la última compra" + ex);
+                return -1;
             }
             return res;
 
@@ -154,7 +154,7 @@ namespace VentaDisolvente
             }
             catch (Exception ex)
             {
-                MessageBox.Show("no se encontro id Disolvente" + ex);
+                return -1;
             }
             return res;
         }
@@ -183,7 +183,7 @@ namespace VentaDisolvente
             }
             catch (Exception ex)
             {
-                MessageBox.Show("no se encontró el último cliente" + ex);
+                return -1;
             }
             return res;
 

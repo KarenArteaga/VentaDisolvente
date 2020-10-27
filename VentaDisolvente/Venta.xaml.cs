@@ -40,7 +40,7 @@ namespace VentaDisolvente
             Compra comp = new Compra(id, acidez, pres, cantidad);
             int totalC = comp.generarCompra();
             DateTime fecha = DateTime.Now;
-            if (comp.generarCompra() > 0)
+            if (totalC > 0)
                 MessageBox.Show("compra realizada:  total:  " + totalC + ".0 $ pesos" + fecha.ToString());
             else
                 MessageBox.Show("error en la compra");
