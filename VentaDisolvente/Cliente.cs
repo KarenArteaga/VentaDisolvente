@@ -27,7 +27,7 @@ namespace VentaDisolvente
 
         public Cliente()
         {
-            idCliente++;
+            idCliente= Conexion.getUltimoCliente() + 1;
             nombre = "";
             correo = "";
             direccion = "";
