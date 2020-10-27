@@ -31,7 +31,7 @@
         <Button x:Name="btRegresar" Content="Regresar" HorizontalAlignment="Left" Margin="10,368,0,0" VerticalAlignment="Top" Width="117" Click="btRegresar_Click" FontFamily="Tahoma" FontSize="14" BorderBrush="#FF3A0505" Background="#FF3A0505" Height="55" Foreground="#FFF9F7F7" />
         <Button x:Name="btBuscarC" Content="Buscar Cliente" HorizontalAlignment="Left" Margin="158,368,0,0" VerticalAlignment="Top" Width="144" Click="btBuscarC_Click" FontFamily="Tahoma" FontSize="14" BorderBrush="#FF3A0505" Background="#FF3A0505" Height="55" Foreground="#FFF9F7F7"/>
         <Button x:Name="btAgregar" Content="Agregar Cliente" HorizontalAlignment="Left" Margin="342,368,0,0" VerticalAlignment="Top" Width="145" Click="btAgregar_Click" FontFamily="Tahoma" FontSize="14" BorderBrush="#FF3A0505" Background="#FF3A0505" Height="55" Foreground="#FFF9F7F7" />
-        <Label Content="titulo" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="37" Width="541" FontFamily="Tahoma" FontSize="18" BorderBrush="#FF515555" Background="#FF515555" FontStyle="Italic" Foreground="#FFFDFDFD" />
+        <Label Content="EcoGrass" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="37" Width="541" FontFamily="Tahoma" FontSize="18" BorderBrush="#FF515555" Background="#FF515555" FontStyle="Italic" Foreground="#FFFDFDFD" />
 
 
     </Grid>

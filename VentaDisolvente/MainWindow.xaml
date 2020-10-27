@@ -16,7 +16,7 @@
         <Label Content="Usuario:" HorizontalAlignment="Left" Margin="78,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.334,-3.496" Width="288"  FontSize="14" FontFamily="Tahoma" BorderBrush="#FF38393A" Background="#FF38393A" Foreground="#FFDAD5D5" Height="27" />
         <TextBox x:Name="txtUsuario" HorizontalAlignment="Left" Height="27" Margin="184,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" FontSize="14" FontFamily="Tahoma"/>
         <TextBox x:Name="txtContra" HorizontalAlignment="Left" Height="27" Margin="184,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontSize="14" FontFamily="Tahoma"/>
-        <Label Content="Titulo Proyecto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="492" Height="36" Background="#FF71BF30" FontFamily="Tahoma" FontSize="18" FontStyle="Italic" FontWeight="Light" Margin="0,25,0,0"/>
+        <Label Content="EcoGrass" HorizontalAlignment="Left" VerticalAlignment="Top" Width="492" Height="36" Background="#FF71BF30" FontFamily="Tahoma" FontSize="18" FontStyle="Italic" FontWeight="Light" Margin="0,25,0,0"/>
 
     </Grid>
 </Window>
